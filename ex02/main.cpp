@@ -1,24 +1,17 @@
-#include "Zombie.hpp"
-
+#include <iostream>
 
 int main(void) {
-    Zombie* horde4 = zombieHorde(4, "4");
-    Zombie* horde3 = zombieHorde(3, "3");
-    Zombie* horde2 = zombieHorde(2, "2");
-    Zombie* horde1 = zombieHorde(1, "1");
+    std::string brain = "HI THIS IS BRAIN";
+    std::string* stringPTR = &brain;
+    std::string& stringREF = brain;
 
-    for(int i = 0; i < 4; i++)
-        horde4[i].announce();
-    for (int i = 0; i < 3; i++)
-        horde3[0].announce();
-    for (int i = 0; i < 2; i++)
-        horde2[0].announce();
-    for (int i = 0; i < 1; i++)
-        horde1[0].announce();
+    std::cout << "Memory address of the string variable: " << &brain << std::endl;
+    std::cout << "Memory address held by the stringPTR variable: " << stringPTR << std::endl;
+    std::cout << "Memory address held by the stringREF variable: " << &stringREF << std::endl;
 
-    delete[] horde1;
-    delete[] horde2;
-    delete[] horde3;
-    delete[] horde4;
+    std::cout << "Value of brain: " << brain << std::endl;
+    std::cout << "Value pointed to by stringPTR: " << *stringPTR << std::endl;
+    std::cout << "Value pointed to by stringREF: " << stringREF << std::endl;
+
     return 0;
 }
