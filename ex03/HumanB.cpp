@@ -1,5 +1,4 @@
 #include "HumanB.hpp"
-#include "HumanA.hpp"
 
 HumanB::HumanB(const std::string& n) : name(n), weapon(nullptr) {}
 
